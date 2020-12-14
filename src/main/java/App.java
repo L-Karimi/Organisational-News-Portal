@@ -48,5 +48,18 @@ public class App {
         });
 
 
+        get("/news", "application/json", (req, res) -> {
+            System.out.println(newsDao.getAll());
+
+            if(newsDao.getAll().size() > 0) {
+                return gson.toJson(newsDao.getAll());
+            }
+            else{
+                return "{\"message\":\"I'm sorry, but no news items are currently listed in the database.\"}";
+            }
+        });
+
+
+    }
     }
 }
