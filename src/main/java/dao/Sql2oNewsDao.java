@@ -33,6 +33,15 @@ public class Sql2oNewsDao implements NewsDao {
 
     @Override
     public void addNewsToDepartment(News news, DepartmentDao.Department department) {
+        String sql = "INSERT INTO departments_news (departmentId, newsId) VALUES (:departmentId, :newsId)";
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .addParameter("departmentId", department.getId())
+                    .addParameter("newsId", news.getId())
+                    .executeUpdate();
+        } catch (Sql2oException ex){
+            System.out.println(ex);
+        }
 
     }
 
