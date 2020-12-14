@@ -89,6 +89,15 @@ public class App {
         });
 
 
+        get("/department/:id", "application/json", (req, res) -> { //accept a request in format JSON from an app
+            int departmentId = Integer.parseInt(req.params("id"));
+            DepartmentDao.Department departmentToFind = departmentsDao.findById(departmentId);
+            if (departmentToFind == null){
+                throw new ApiException(404, String.format("No department with the id: \"%s\" exists", req.params("id")));
+            }
+            return gson.toJson(departmentToFind);
+        });
+
 
 
     }
