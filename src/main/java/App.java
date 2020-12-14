@@ -59,7 +59,15 @@ public class App {
             }
         });
 
+        get("/news/:id", "application/json", (req, res) -> { //accept a request in format JSON from an app
+            int newsId = Integer.parseInt(req.params("id"));
+            News newsToFind = newsDao.findById(newsId);
+            if (newsToFind == null){
+                throw new ApiException(404, String.format("No news item with the id: \"%s\" exists", req.params("id")));
+            }
+            return gson.toJson(newsToFind);
+        });
+
 
     }
     }
-}
