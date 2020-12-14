@@ -75,6 +75,21 @@ public class App {
             return gson.toJson(department);
         });
 
+        get("/departments", "application/json", (req, res) -> {
+            System.out.println(departmentsDao.getAll());
+
+            if(departmentsDao.getAll().size() > 0){
+                return gson.toJson(departmentsDao.getAll());
+            }
+
+            else {
+                return "{\"message\":\"I'm sorry, but no departments are currently listed in the database.\"}";
+            }
+
+        });
+
+
+
 
     }
     }
