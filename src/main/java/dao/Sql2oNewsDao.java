@@ -114,6 +114,18 @@ public class Sql2oNewsDao implements NewsDao {
 
     @Override
     public void deleteById(int id) {
+        String sql = "DELETE from news WHERE id = :id";
+        String deleteJoin = "DELETE from departments_news WHERE departmentId = :departmentId";
+        try (Connection con = sql2o.open()) {
+            con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeUpdate();
+            con.createQuery(deleteJoin)
+                    .addParameter("departmentId", id)
+                    .executeUpdate();
+        } catch (Sql2oException ex){
+            System.out.println(ex);
+        }
 
     }
 
