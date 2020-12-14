@@ -5,6 +5,7 @@ import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -65,7 +66,12 @@ public class Sql2oNewsDao implements NewsDao {
 
     @Override
     public List<News> getAllNewsByDepartment(int departmentId) {
-        return null;
+        List<News> news = new ArrayList<>();
+        try (Connection con = sql2o.open()) {
+            return con.createQuery("SELECT * FROM news WHERE departmentid = :departmentId")
+                    .addParameter("departmentId", departmentId)
+                    .executeAndFetch(News.class);
+        }
     }
 
     @Override
