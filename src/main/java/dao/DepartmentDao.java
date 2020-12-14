@@ -21,6 +21,12 @@ public interface DepartmentDao {
     void clearAll();
 
     class Department {
+        private int departmentEmployeesNumber;
+
+        public Department(String servicing, String repairs, int i) {
+
+        }
+
         public void setId(int id) {
 
         }
@@ -28,6 +34,22 @@ public interface DepartmentDao {
         public int getId() {
 
             return 0;
+        }
+
+        public int getDepartmentEmployeesNumber() {
+            return departmentEmployeesNumber;
+        }
+
+        public void setDepartmentEmployeesNumber(int departmentEmployeesNumber) {
+            this.departmentEmployeesNumber = departmentEmployeesNumber;
+        }
+
+        public String getDepartmentDescription() {
+            return null;
+        }
+
+        public String getDepartmentName() {
+            return null;
         }
     }
 }
