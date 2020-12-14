@@ -115,6 +115,20 @@ public class App {
         });
 
 
+        get("/department/:id/users", "application/json", (req, res) -> {
+            int departmentId = Integer.parseInt(req.params("id"));
+
+            DepartmentDao.Department departmentToFind = departmentsDao.findById(departmentId);
+            List<User> departmentUsers;
+
+            if (departmentToFind == null) {
+                throw new ApiException(404, String.format("No department with the id: \"%s\" exists", req.params("id")));
+            }
+
+            departmentUsers = usersDao.getAllUsersByDepartment(departmentId);
+            res.type("application/json");
+            return gson.toJson(departmentUsers);
+        });
 
 
     }
