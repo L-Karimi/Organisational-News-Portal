@@ -150,6 +150,19 @@ public class App {
         });
 
 
+        get("/user/:id", "application/json", (req, res) -> {
+            int userId = Integer.parseInt(req.params("id"));
+            User userToFind = usersDao.findUserById(userId);
+            if (userToFind == null){
+                throw new ApiException(404, String.format("No user with the id: \"%s\" exists", req.params("id")));
+            }
+            return gson.toJson(userToFind);
+        });
+
+
+
+
+
 
     }
     }
