@@ -63,6 +63,4 @@ public class Sql2oUserDaoTest {
         assertEquals(testUser.getId(), testUser.getId());
     }
 
-
-
 }
