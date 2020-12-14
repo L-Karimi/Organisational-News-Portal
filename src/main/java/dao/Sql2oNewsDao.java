@@ -47,7 +47,10 @@ public class Sql2oNewsDao implements NewsDao {
 
     @Override
     public List<News> getAll() {
-        return null;
+        try (Connection con = sql2o.open()) {
+            return con.createQuery("SELECT * FROM news")
+                    .executeAndFetch(News.class);
+        }
     }
 
     @Override
