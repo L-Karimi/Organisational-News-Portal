@@ -12,4 +12,20 @@ public class User {
     public void setId(int id) {
 
     }
+
+    public int getDepartmentId() {
+        return 0;
+    }
+
+    public String getUserCompanyRole() {
+        return null;
+    }
+
+    public String getUserCompanyPosition() {
+        return null;
+    }
+
+    public String getUserName() {
+        return null;
+    }
 }
