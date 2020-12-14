@@ -89,7 +89,7 @@ public class App {
         });
 
 
-        get("/department/:id", "application/json", (req, res) -> { //accept a request in format JSON from an app
+        get("/department/:id", "application/json", (req, res) -> {
             int departmentId = Integer.parseInt(req.params("id"));
             DepartmentDao.Department departmentToFind = departmentsDao.findById(departmentId);
             if (departmentToFind == null){
@@ -97,6 +97,23 @@ public class App {
             }
             return gson.toJson(departmentToFind);
         });
+
+
+        get("/department/:id/news", "application/json", (req, res) -> {
+            int departmentId = Integer.parseInt(req.params("id"));
+
+            DepartmentDao.Department departmentToFind = departmentsDao.findById(departmentId);
+            List<News> departmentNews;
+
+            if (departmentToFind == null) {
+                throw new ApiException(404, String.format("No department with the id: \"%s\" exists", req.params("id")));
+            }
+
+            departmentNews = newsDao.getAllNewsByDepartment(departmentId);
+            res.type("application/json");
+            return gson.toJson(departmentNews);
+        });
+
 
 
 
