@@ -20,43 +20,43 @@ public class User {
     }
 
 
-//    public String getUserName() {
-//        return userName;
-//    }
-//
-//    public void setUserName(String userName) {
-//        this.userName = userName;
-//    }
-//
-//    public String getUserCompanyPosition() {
-//        return userCompanyPosition;
-//    }
-//
-//    public void setUserCompanyPosition(String userCompanyPosition) {
-//        this.userCompanyPosition = userCompanyPosition;
-//    }
-//
-//    public String getUserCompanyRole() {
-//        return userCompanyRole;
-//    }
-//
-//    public void setUserCompanyRole(String userCompanyRole) {
-//        this.userCompanyRole = userCompanyRole;
-//    }
-//
-//    public int getDepartmentId() {
-//        return departmentId;
-//    }
-//
-//    public void setDepartmentId(int departmentId) {
-//        this.departmentId = departmentId;
-//    }
-//
-//    public int getId() {
-//        return id;
-//    }
-//
-//    public void setId(int id) {
-//        this.id = id;
-//    }
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserCompanyPosition() {
+        return userCompanyPosition;
+    }
+
+    public void setUserCompanyPosition(String userCompanyPosition) {
+        this.userCompanyPosition = userCompanyPosition;
+    }
+
+    public String getUserCompanyRole() {
+        return userCompanyRole;
+    }
+
+    public void setUserCompanyRole(String userCompanyRole) {
+        this.userCompanyRole = userCompanyRole;
+    }
+
+    public int getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(int departmentId) {
+        this.departmentId = departmentId;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
