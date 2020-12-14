@@ -54,4 +54,20 @@ public class News {
     public void setId(int id) {
         this.id = id;
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof News)) return false;
+        News news = (News) o;
+        return getDepartmentId() == news.getDepartmentId() &&
+                getId() == news.getId() &&
+                Objects.equals(getNewsTitle(), news.getNewsTitle()) &&
+                Objects.equals(getNewsContent(), news.getNewsContent());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getNewsTitle(), getNewsContent(), getDepartmentId(), getId());
+    }
+
 }
