@@ -29,7 +29,7 @@ A user visiting the news portal Api site will be able to:
 
 ## How to use (Behavior)
 ## User Guide
-####View Landing page
+#### View Landing page
 * Method: GET
 * Route: /
 #### Create general News: 
