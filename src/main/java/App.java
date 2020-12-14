@@ -130,6 +130,13 @@ public class App {
             return gson.toJson(departmentUsers);
         });
 
+        post("/user/new", "application/json", (req, res)->{
+            User user = gson.fromJson(req.body(), User.class);
+            usersDao.add(user);
+            res.status(201);
+            return gson.toJson(user);
+        });
+
 
     }
     }
