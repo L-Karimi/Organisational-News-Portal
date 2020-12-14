@@ -137,6 +137,19 @@ public class App {
             return gson.toJson(user);
         });
 
+        get("/users", "application/json", (req, res) -> {
+            System.out.println(usersDao.getAllUsers());
+
+            if(usersDao.getAllUsers().size() > 0){
+                return gson.toJson(usersDao.getAllUsers());
+            }
+
+            else{
+                return "{\"message\":\"I'm sorry, but no users are currently listed in the database.\"}";
+            }
+        });
+
+
 
     }
     }
