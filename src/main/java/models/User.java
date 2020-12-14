@@ -59,4 +59,20 @@ public class User {
     public void setId(int id) {
         this.id = id;
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+        User user = (User) o;
+        return getDepartmentId() == user.getDepartmentId() &&
+                getId() == user.getId() &&
+                Objects.equals(getUserName(), user.getUserName()) &&
+                Objects.equals(getUserCompanyPosition(), user.getUserCompanyPosition()) &&
+                Objects.equals(getUserCompanyRole(), user.getUserCompanyRole());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getUserName(), getUserCompanyPosition(), getUserCompanyRole(), getDepartmentId(), getId());
+    }
 }
