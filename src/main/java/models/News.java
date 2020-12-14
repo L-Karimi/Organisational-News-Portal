@@ -1,31 +1,57 @@
 package models;
 
+import java.util.Objects;
+
 public class News {
-    public News(String money, String the_finances_are_crazy) {
+    private String newsTitle;
+    private String newsContent;
+    private int departmentId;
+    private int id;
 
+
+    public News(String newsTitle, String newsContent){
+        this.newsTitle = newsTitle;
+        this.newsContent = newsContent;
+        this.departmentId = 0;
     }
 
-    public News(String terms, String conditions, int i) {
 
+    public News(String newsTitle, String newsContent, int departmentId){
+        this.newsContent = newsContent;
+        this.newsTitle = newsTitle;
+        this.departmentId = departmentId;
     }
 
-    public void setId(int id) {
 
+    public String getNewsTitle() {
+        return newsTitle;
     }
 
-    public int getId() {
-        return 0;
+    public void setNewsTitle(String newsTitle) {
+        this.newsTitle = newsTitle;
     }
 
     public String getNewsContent() {
-        return null;
+        return newsContent;
     }
 
-    public String getNewsTitle() {
-        return null;
+    public void setNewsContent(String newsContent) {
+        this.newsContent = newsContent;
     }
 
     public int getDepartmentId() {
-        return 0;
+        return departmentId;
+    }
+
+    public void setDepartmentId(int departmentId) {
+        this.departmentId = departmentId;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
