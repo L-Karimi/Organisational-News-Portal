@@ -40,12 +40,21 @@ public class Sql2oUserDao implements UserDao{
 
     @Override
     public User findUserById(int id) {
-        return null;
+        try(Connection con = sql2o.open()){
+            return con.createQuery("SELECT * FROM users WHERE id=:id")
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(User.class);
+        }
     }
 
     @Override
     public List<User> getAllUsersByDepartment(int departmentId) {
-        return null;
+        List<News> news = new ArrayList<>();
+        try (Connection con = sql2o.open()) {
+            return con.createQuery("SELECT * FROM users WHERE departmentid = :departmentId")
+                    .addParameter("departmentId", departmentId)
+                    .executeAndFetch(User.class);
+        }
     }
 
     @Override
