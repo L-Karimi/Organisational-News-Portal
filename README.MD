@@ -87,10 +87,10 @@ A user visiting the news portal Api site will be able to:
 ## Contact Information
 ~ For any inquiries or future git collaborative projects, reach out to:
 
-Email: <a href="mailto:">luciahkei101@gmail.com</a>
+Email: <a href="mailto:">karimiluccy@gmail.com</a>
 
 ## LICENSE
-* Copyright 2020 Lucy Karimi
+* Copyright 2024 Lucy Karimi
   
   Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
   
